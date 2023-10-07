@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Biscuit.InGame
 {
     public class InGameManager : MonoBehaviour
     {
-
         enum  Phase{
             Wait = 0,
             Listen,
             Play,
             End,
+            Pause,
         }
 
         private bool _isPause = false;
@@ -21,6 +22,11 @@ namespace Biscuit.InGame
         private LaneController _laneController = null;
 
         private Phase _phase = Phase.Wait;
+        private Phase _postPhase = Phase.Wait;
+
+        [SerializeField]
+        private PauseManager _pauseManager = null;
+
 
         // Start is called before the first frame update
         void Start()
@@ -41,10 +47,15 @@ namespace Biscuit.InGame
         // Update is called once per frame
         void Update()
         {
-            // Debug.Log(string.Format("####{0}", Time.deltaTime));
-
             if (_isPause)
             {
+                return;
+            }
+
+            // ƒL[“ü—Í
+            if (Input.GetKey(KeyCode.P))
+            {
+                Puase();
                 return;
             }
 
@@ -107,6 +118,20 @@ namespace Biscuit.InGame
             }
         }
 
+        private void Puase()
+        {
+            if (null == _pauseManager) return;
+            _postPhase = _phase;
+            _phase = Phase.Pause;
+            _pauseManager.gameObject.SetActive(true);
+            _isPause = true;
+
+            _pauseManager.BackEvenet = () => {
+                _pauseManager.gameObject.SetActive(false);
+                _phase = _postPhase;
+                _isPause = false;
+            };
+        }
 
 
     }

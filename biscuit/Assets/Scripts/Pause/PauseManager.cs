@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,10 @@ public class PauseManager : MonoBehaviour
 
     private int nSelect;    // 選択
     private const int SelectMax = 3;
+
+
+    private Action _backEvenet = null;
+    public Action BackEvenet { set { _backEvenet = value; } }
 
     //======================================
     //  初期化処理
@@ -54,6 +59,10 @@ public class PauseManager : MonoBehaviour
             if (nSelect == 0)
             {
                 // ポーズを非アクティブにする
+                if(null != _backEvenet)
+                {
+                    _backEvenet.Invoke();
+                }
             }
             else if (nSelect == 1)
             {
