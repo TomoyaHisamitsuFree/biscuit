@@ -86,7 +86,7 @@ public class JudgeScript : MonoBehaviour
         Delete();
     }
 
-    void Delete()
+    public void Delete()
     {
         Destroy(clone,2.0f);
     }
