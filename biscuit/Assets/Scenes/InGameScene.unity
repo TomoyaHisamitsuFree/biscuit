@@ -195,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 500
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 526197165}
   - component: {fileID: 526197166}
   m_Layer: 0
-  m_Name: NotesBase7
+  m_Name: NotesPos7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 832476208}
   - component: {fileID: 832476209}
   m_Layer: 0
-  m_Name: NotesBase10
+  m_Name: NotesPos10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 859756950}
   - component: {fileID: 859756951}
   m_Layer: 0
-  m_Name: NotesBase11
+  m_Name: NotesPos11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 962858102}
   - component: {fileID: 962858103}
   m_Layer: 0
-  m_Name: NotesBase9
+  m_Name: NotesPos9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 976415262}
   - component: {fileID: 976415263}
   m_Layer: 0
-  m_Name: NotesBase3
+  m_Name: NotesPos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 987124886}
   - component: {fileID: 987124887}
   m_Layer: 0
-  m_Name: NotesBase13
+  m_Name: NotesPos13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 1030247266}
   - component: {fileID: 1030247267}
   m_Layer: 0
-  m_Name: NotesBase0
+  m_Name: NotesPos0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,7 +1187,7 @@ GameObject:
   - component: {fileID: 1127831826}
   - component: {fileID: 1127831827}
   m_Layer: 0
-  m_Name: NotesBase5
+  m_Name: NotesPos5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1271,7 +1271,7 @@ GameObject:
   - component: {fileID: 1230329604}
   - component: {fileID: 1230329605}
   m_Layer: 0
-  m_Name: NotesBase12
+  m_Name: NotesPos12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1355,7 +1355,7 @@ GameObject:
   - component: {fileID: 1284829795}
   - component: {fileID: 1284829796}
   m_Layer: 0
-  m_Name: NotesBase4
+  m_Name: NotesPos4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1491,8 +1491,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a997ffa2acee56459b3abf7fb7cbd47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 5
   _maxTime: 16
   _timePos: {fileID: 114575205}
+  _notesPosBaseList:
+  - {fileID: 1610385166}
+  - {fileID: 976415261}
+  - {fileID: 1284829794}
+  - {fileID: 1127831825}
+  - {fileID: 1512567172}
+  - {fileID: 526197164}
+  - {fileID: 1525328149}
+  - {fileID: 962858101}
+  - {fileID: 832476207}
+  - {fileID: 859756949}
+  - {fileID: 1230329603}
+  - {fileID: 987124885}
+  - {fileID: 1550571812}
+  - {fileID: 2023773754}
+  - {fileID: 1591063736}
+  _notesPrefabList:
+  - {fileID: 4734933832592221413, guid: a1fb1b9ef04b7ea4da8077001919d464, type: 3}
+  - {fileID: 4734933832592221413, guid: d800e41924bde2940a498f8680cc49ac, type: 3}
+  - {fileID: 4734933832592221413, guid: 4e5d2a44a5b14b745857cc2e0bd109c8, type: 3}
+  - {fileID: 4734933832592221413, guid: 139167d86c9e18640bf2de342653b61e, type: 3}
+  _notesCount: 4
 --- !u!1 &1451539505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1527,7 @@ GameObject:
   - component: {fileID: 1451539506}
   - component: {fileID: 1451539507}
   m_Layer: 0
-  m_Name: NotesBase1
+  m_Name: NotesPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1611,7 @@ GameObject:
   - component: {fileID: 1512567173}
   - component: {fileID: 1512567174}
   m_Layer: 0
-  m_Name: NotesBase6
+  m_Name: NotesPos6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1672,7 +1695,7 @@ GameObject:
   - component: {fileID: 1525328150}
   - component: {fileID: 1525328151}
   m_Layer: 0
-  m_Name: NotesBase8
+  m_Name: NotesPos8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1756,7 +1779,7 @@ GameObject:
   - component: {fileID: 1550571813}
   - component: {fileID: 1550571814}
   m_Layer: 0
-  m_Name: NotesBase14
+  m_Name: NotesPos14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1840,7 +1863,7 @@ GameObject:
   - component: {fileID: 1591063737}
   - component: {fileID: 1591063738}
   m_Layer: 0
-  m_Name: NotesBase16
+  m_Name: NotesPos16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1924,7 +1947,7 @@ GameObject:
   - component: {fileID: 1610385167}
   - component: {fileID: 1610385168}
   m_Layer: 0
-  m_Name: NotesBase2
+  m_Name: NotesPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2101,7 +2124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 500
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.7868676, g: 0, b: 1, a: 0.80784315}
   m_FlipX: 0
@@ -2124,7 +2147,7 @@ GameObject:
   - component: {fileID: 2023773755}
   - component: {fileID: 2023773756}
   m_Layer: 0
-  m_Name: NotesBase15
+  m_Name: NotesPos15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
