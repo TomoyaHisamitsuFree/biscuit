@@ -14,6 +14,7 @@ public class TitileButton : MonoBehaviour
     {
         bPIKAPIKA = false;
         nPIKAPICount = 0;
+        StartCoroutine(ColorChange());
     }
 
     //======================================
@@ -21,8 +22,6 @@ public class TitileButton : MonoBehaviour
     //======================================
     void Update()
     {
-        StartCoroutine(ColorChange());
-
         if (bPIKAPIKA == true)
         {
             if (GetComponent<SpriteRenderer>().material.color != Color.gray)
