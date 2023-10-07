@@ -27,6 +27,9 @@ namespace Biscuit.InGame
         [SerializeField]
         private PauseManager _pauseManager = null;
 
+        [SerializeField]
+        private JudgeScript _judgeScript = null;
+
 
         // Start is called before the first frame update
         void Start()
@@ -75,6 +78,10 @@ namespace Biscuit.InGame
                 {
                     if (_laneController.IsFinished)
                     {
+                        if(null != _judgeScript)
+                        {
+                            _judgeScript.Delete();
+                        }
                         _phase = Phase.End;
                         StartCoroutine(startListen());
                     }
