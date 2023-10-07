@@ -72,7 +72,7 @@ public class PauseManager : MonoBehaviour
             else if (nSelect == 2)
             {
                 // ƒQ[ƒ€‚ğƒŠƒgƒ‰ƒC‚·‚é
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("InGameScene");
             }
         }
 

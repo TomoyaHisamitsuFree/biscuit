@@ -55,7 +55,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Pause\PauseManager.cs" />
     <Compile Include="Assets\Scripts\Title\TitileButton.cs" />
+    <Compile Include="Assets\Scripts\InGame\Controller\NotesController.cs" />
+    <Compile Include="Assets\Scripts\InGame\Controller\LaneController.cs" />
     <Compile Include="Assets\Scripts\Title\TitleManager.cs" />
+    <Compile Include="Assets\Scripts\InGame\Manager\InGameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

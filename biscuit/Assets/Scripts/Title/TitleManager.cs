@@ -18,7 +18,7 @@ public class TitleManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Return))
         {
             // ‰Ÿ‚³‚ê‚½Žž
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("InGameScene");
         }
     }
 }
