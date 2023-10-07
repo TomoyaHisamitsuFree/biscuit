@@ -62,7 +62,7 @@ public class PauseManager : MonoBehaviour
                 if(null != _backEvenet)
                 {
                     _backEvenet.Invoke();
-                    _backEvenet == null;
+                    _backEvenet = null;
                 }
             }
             else if (nSelect == 1)
