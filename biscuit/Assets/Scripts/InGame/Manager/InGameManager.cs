@@ -76,7 +76,6 @@ namespace Biscuit.InGame
                     if (_laneController.IsFinished)
                     {
                         _phase = Phase.End;
-                        // TODO
                         StartCoroutine(startListen());
                     }
                 }
