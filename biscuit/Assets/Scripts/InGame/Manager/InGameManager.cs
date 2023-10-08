@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Biscuit.Result;
 
 namespace Biscuit.InGame
 {
@@ -30,12 +31,16 @@ namespace Biscuit.InGame
         [SerializeField]
         private JudgeScript _judgeScript = null;
 
+        private ResultData _resultData = null;
 
         // Start is called before the first frame update
         void Start()
         {
             QualitySettings.vSyncCount = 0;
             Application.targetFrameRate = 60;
+
+            _resultData = ResultData.GetResultData();
+            _resultData.ResetData();
 
             init();
         }
