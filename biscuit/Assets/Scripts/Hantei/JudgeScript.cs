@@ -17,6 +17,11 @@ public class JudgeScript : MonoBehaviour
     string objTag;
     Ray2D ray;
     int swt = 0;    //swithTextの略。この数値で叩いた時の判定を決める
+
+
+    List<GameObject> _objPool = new List<GameObject>();
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,13 +86,18 @@ public class JudgeScript : MonoBehaviour
             }
             //出力したオブジェクトに名前をつける
             clone.name = "judegeT";     //これがなくてもプログラムは動くので、いらない場合は消していいかも
+            _objPool.Add(clone);
         }
         //判定文字の消去
-        Delete();
+        //Delete();
     }
 
     public void Delete()
     {
-        Destroy(clone,2.0f);
+        foreach(var obj in _objPool)
+        {
+            Destroy(obj);
+        }
+        _objPool.Clear();
     }
 }

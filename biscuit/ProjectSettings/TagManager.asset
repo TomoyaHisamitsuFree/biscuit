@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pause
+  - JudgeText
+  - Perfect
   layers:
   - Default
   - TransparentFX
