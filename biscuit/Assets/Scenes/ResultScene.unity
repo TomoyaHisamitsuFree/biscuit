@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 102530568}
   - component: {fileID: 102530567}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 470810194}
   - component: {fileID: 470810193}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: perfect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,6 +505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 527454448}
+  - component: {fileID: 527454449}
   m_Layer: 0
   m_Name: ResultManager
   m_TagString: Untagged
@@ -527,6 +528,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527454449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527454447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eafb043b97b47ea4f8159b562561aed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 102530567}
+  _perfectText: {fileID: 470810193}
+  _goodText: {fileID: 546450124}
+  _badText: {fileID: 632180551}
 --- !u!1 &546450122
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +556,7 @@ GameObject:
   - component: {fileID: 546450125}
   - component: {fileID: 546450124}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: good
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +734,7 @@ GameObject:
   - component: {fileID: 632180552}
   - component: {fileID: 632180551}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: bad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,10 +1019,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 102530566}
   - {fileID: 470810192}
   - {fileID: 546450123}
   - {fileID: 632180550}
-  - {fileID: 102530566}
   m_Father: {fileID: 772139936}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -33,6 +33,10 @@ namespace Biscuit.InGame
 
         private ResultData _resultData = null;
 
+        [SerializeField]
+        private int _maxWaveCount = 3;
+        private int _waveCount = 0;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -48,6 +52,7 @@ namespace Biscuit.InGame
         private void init()
         {
             _phase = Phase.Wait;
+            _waveCount = 0;
 
             StartCoroutine(startListen());
         }
@@ -87,8 +92,17 @@ namespace Biscuit.InGame
                         {
                             _judgeScript.Delete();
                         }
-                        _phase = Phase.End;
-                        StartCoroutine(startListen());
+                        // 最後のウェーブだった
+                        if (_maxWaveCount == _waveCount)
+                        {
+                            goToResult();
+                            _phase = Phase.End;
+                        }
+                        // 繰り返し
+                        else
+                        {
+                            StartCoroutine(startListen());
+                        }
                     }
                 }
             }
@@ -98,6 +112,7 @@ namespace Biscuit.InGame
 
         public IEnumerator startListen()
         {
+            _waveCount++;
             _phase = Phase.Listen;
             if (null != _laneController)
             {
@@ -144,6 +159,18 @@ namespace Biscuit.InGame
             };
         }
 
+
+        private void goToResult()
+        {
+            // TODO
+            _resultData.score = 123;
+            _resultData.perfectCount = 456;
+            _resultData.goodCount = 789;
+            _resultData.badCount = 1011;
+
+            // リザルトへ
+            SceneManager.LoadScene("ResultScene");
+        }
 
     }
 
