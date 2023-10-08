@@ -288,9 +288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59148dd60790e42478cea2d950ef5849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textB: {fileID: 4033230353854155339, guid: 50fd9badd17d1b741b8fced23be47d0c, type: 3}
-  textG: {fileID: 1755040212053687909, guid: fa537bdc38d787347ab443403dcf4ad5, type: 3}
-  textP: {fileID: 7237492487112348562, guid: 962ea4cc16efb0540b7c78c0bd24744f, type: 3}
+  textB: {fileID: 5911954683061663702, guid: acef3d4c696c19842bd089ec5fb76154, type: 3}
+  textG: {fileID: 317946186591192721, guid: ff71fedf3718f92458720d58825b41aa, type: 3}
+  textP: {fileID: 1581734349600150508, guid: ef9e2390af04a414e9f7f57dd2eb06f2, type: 3}
 --- !u!1 &114575205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1637,7 @@ MonoBehaviour:
   - {fileID: 2023773754}
   - {fileID: 1591063736}
   _notesPrefabList:
-  - {fileID: 4734933832592221413, guid: a1fb1b9ef04b7ea4da8077001919d464, type: 3}
+  - {fileID: 2541425552587534316, guid: fe3cdf1b4a83a3f4ebf3b13c3b9a4a4c, type: 3}
   - {fileID: 4734933832592221413, guid: d800e41924bde2940a498f8680cc49ac, type: 3}
   - {fileID: 4734933832592221413, guid: 4e5d2a44a5b14b745857cc2e0bd109c8, type: 3}
   - {fileID: 4734933832592221413, guid: 139167d86c9e18640bf2de342653b61e, type: 3}
