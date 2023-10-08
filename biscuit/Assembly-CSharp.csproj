@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Pause\PauseManager.cs" />
+    <Compile Include="Assets\Scripts\InGame\Controller\PlayerPose.cs" />
     <Compile Include="Assets\Scripts\Title\TitileButton.cs" />
     <Compile Include="Assets\Scripts\Hantei\Move.cs" />
     <Compile Include="Assets\Scripts\InGame\Controller\NotesController.cs" />

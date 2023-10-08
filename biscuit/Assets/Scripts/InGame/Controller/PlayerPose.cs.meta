@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 309f7f82d59fdbd4ba677c554ade16f7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Default: {fileID: 21300000, guid: ee2c442cbf490cf469739ea19d9c3e00, type: 3}
+  - A: {fileID: 21300000, guid: e322bb65545ff7a498457ea0656ec1ca, type: 3}
+  - S: {fileID: 21300000, guid: 5c77b1a907a779f42a74d682df903dc8, type: 3}
+  - D: {fileID: 21300000, guid: dfd74dae1d5ddb043acbe868634e9c3a, type: 3}
+  - F: {fileID: 21300000, guid: e59732f555fc5024eb76892dc4cc9241, type: 3}
+  - AS: {fileID: 21300000, guid: 6a29c6ab58b09f6419bd49691652deae, type: 3}
+  - AD: {fileID: 21300000, guid: 80c3d0ea3374ba2489a69f00bf844046, type: 3}
+  - AF: {fileID: 21300000, guid: fbc94a22b3cbd55419b10c5c256ab4ba, type: 3}
+  - SD: {fileID: 21300000, guid: 576dd224ed514264cad8503a1953efad, type: 3}
+  - SF: {fileID: 21300000, guid: 1e1f4c9334680734ca65d17922655fa8, type: 3}
+  - DF: {fileID: 21300000, guid: a85e8bb2f57731c47bdaa45b766f9b2c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
