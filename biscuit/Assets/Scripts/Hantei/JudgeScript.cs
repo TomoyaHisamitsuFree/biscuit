@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using Biscuit.InGame;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,9 +17,12 @@ public class JudgeScript : MonoBehaviour
     Vector3 origin;
     Vector3 direction;
     string objTag;
+
+    //NotesController.Type keyType; //仮の変数
+    string keyType = "";
+    string strobj;
     Ray2D ray;
     int swt = 0;    //swithTextの略。この数値で叩いた時の判定を決める
-
 
     List<GameObject> _objPool = new List<GameObject>();
 
@@ -36,8 +41,86 @@ public class JudgeScript : MonoBehaviour
         parent = transform.parent.position;
         genPos = transform.position;
 
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            keyType = "A";
+
+            if(Input.GetKey(KeyCode.S))
+            {
+                keyType = "AS";
+            }
+
+            if(Input.GetKey(KeyCode.D))
+            {
+                keyType = "AD";
+            }
+
+            if(Input.GetKey(KeyCode.F))
+            {
+                keyType = "AF";
+            }
+            
+        }
+        else if(Input.GetKeyDown(KeyCode.S))
+        {
+            keyType = "S";
+
+            if(Input.GetKey(KeyCode.A))
+            {
+                keyType = "AS";
+            }
+
+            if(Input.GetKey(KeyCode.D))
+            {
+                keyType = "SD";
+            }
+            if(Input.GetKey(KeyCode.F))
+            {
+                keyType = "SF";
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.D))
+        {
+            keyType = "D";
+
+            if(Input.GetKey(KeyCode.A))
+            {
+                keyType = "AD";
+            }
+
+            if(Input.GetKey(KeyCode.S))
+            {
+                keyType = "SD";
+            }
+
+            if(Input.GetKey(KeyCode.F))
+            {
+                keyType = "DF";
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.F))
+        {
+            keyType = "F";
+            
+            if(Input.GetKey(KeyCode.A))
+            {
+                keyType = "AF";
+            }
+
+            if(Input.GetKey(KeyCode.S))
+            {
+                keyType = "SF";
+            }
+
+            if(Input.GetKey(KeyCode.D))
+            {
+                keyType = "DF";
+            }
+
+        }
+
         //ノーツを叩いた時の処理
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(keyType != "")
         {
             //取得したオブジェクトの初期化
             objTag = "";
@@ -51,18 +134,40 @@ public class JudgeScript : MonoBehaviour
 
             if (hit2D.collider) // もしRayを投射して何らかのコライダーに衝突したら
             {
-                objTag = hit2D.collider.gameObject.tag; // 衝突した相手オブジェクトの名前を取得
+                objTag = hit2D.collider.gameObject.tag; // 衝突した相手オブジェクトのタグを取得]
+                
             }
 
+   /*         switch(keyType)
+            {
+
+                case "A":
+                {
+                    if()
+                    {
+                        //衝突した相手の判定
+                        if(objTag == "Good")
+                        {
+                            swt = 1;    //判定Good
+                        }
+                        else if(objTag == "Perfect")
+                        {
+                            swt = 2;    //判定Perfect
+                        }
+                    }
+                    break;
+                }
+
+            }*/
             //衝突した相手の判定
-            if(objTag == "Good")
+          if(objTag == "Good")
             {
                 swt = 1;    //判定Good
             }
             else if(objTag == "Perfect")
             {
                 swt = 2;    //判定Perfect
-            }
+            }                               
 
             //判定の文字を出力する処理
             switch(swt){
@@ -88,6 +193,7 @@ public class JudgeScript : MonoBehaviour
             clone.name = "judegeT";     //これがなくてもプログラムは動くので、いらない場合は消していいかも
             _objPool.Add(clone);
         }
+        keyType = "";
         //判定文字の消去
         //Delete();
     }
