@@ -56,7 +56,7 @@ namespace Biscuit.InGame
             }
 
             // ƒL[“ü—Í
-            if (Input.GetKey(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.P))
             {
                 Puase();
                 return;

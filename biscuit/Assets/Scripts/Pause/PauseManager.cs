@@ -59,7 +59,7 @@ public class PauseManager : MonoBehaviour
             if (nSelect == 0)
             {
                 // ポーズを非アクティブにする
-                if(null != _backEvenet)
+                if (null != _backEvenet)
                 {
                     _backEvenet.Invoke();
                     _backEvenet = null;
@@ -103,6 +103,17 @@ public class PauseManager : MonoBehaviour
         else
         {
             Retry.GetComponent<SpriteRenderer>().material.color = Color.gray;
+        }
+
+        //決定処理
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            // ポーズを非アクティブにする
+            if (null != _backEvenet)
+            {
+                _backEvenet.Invoke();
+                _backEvenet = null;
+            }
         }
     }
 }
