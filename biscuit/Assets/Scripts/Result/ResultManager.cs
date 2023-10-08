@@ -7,6 +7,11 @@ namespace Biscuit.Result
 {
     public class ResultManager : MonoBehaviour
     {
+        public bool FallBis;
+        public GameObject Biscuit;
+        public GameObject Yama;
+        public Vector3 pos;
+        private int nCnt;
 
         [SerializeField]
         private TextMeshProUGUI _scoreText = null;
@@ -20,9 +25,14 @@ namespace Biscuit.Result
 
         private ResultData _resultData = null;
 
-        // Start is called before the first frame update
+        //======================================
+        //  èâä˙âªèàóù
+        //======================================
         void Start()
         {
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 60;
+
             _resultData = ResultData.GetResultData();
             if(null != _scoreText)
             {
@@ -40,12 +50,26 @@ namespace Biscuit.Result
             {
                 _badText.text = string.Format("score:{0}", _resultData.badCount);
             }
+            nCnt = 0;
+            FallBis = true;
 
         }
 
-        // Update is called once per frame
+        //======================================
+        //  çXêVèàóù
+        //======================================
         void Update()
         {
+            if(FallBis == true)
+            {
+                int nRand = Random.Range(-3, 3);
+                nCnt++;
+
+                if (nCnt % 5 == 0)
+                {
+                    Instantiate(Biscuit, new Vector3(nRand, 5, 0), Quaternion.identity);
+                }
+            }
 
         }
     }

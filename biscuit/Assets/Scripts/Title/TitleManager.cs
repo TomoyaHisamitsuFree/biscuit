@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource _enterSE = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,8 @@ public class TitleManager : MonoBehaviour
         // Enterキー（前方移動）キー入力
         if (Input.GetKey(KeyCode.Return))
         {
+            _enterSE?.Play();
+
             // 押された時
             SceneManager.LoadScene("InGameScene");
         }
