@@ -9,13 +9,21 @@ namespace Biscuit.InGame
         public enum Type
         {
             A = 0,
-            B,
-            C,
+            S,
             D,
+            F,
+            AS,
+            AD,
+            AF,
+            SD,
+            SF,
+            DF,
+
         }
 
         [SerializeField]
         private Type _type = Type.A;
+        public Type NotesType => _type;
 
         // Start is called before the first frame update
         void Start()
