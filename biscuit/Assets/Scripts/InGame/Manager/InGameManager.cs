@@ -37,6 +37,16 @@ namespace Biscuit.InGame
         private int _maxWaveCount = 3;
         private int _waveCount = 0;
 
+
+        [SerializeField]
+        private int _addCount = 1;
+
+        [SerializeField]
+        private float _addSpeed = 1.0f;
+
+        [SerializeField]
+        private GameObject _RoleModel = null;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -53,6 +63,7 @@ namespace Biscuit.InGame
         {
             _phase = Phase.Wait;
             _waveCount = 0;
+            _RoleModel?.SetActive(false);
 
             StartCoroutine(startListen());
         }
@@ -101,6 +112,7 @@ namespace Biscuit.InGame
                         // ŒJ‚è•Ô‚µ
                         else
                         {
+                            levelUp();
                             StartCoroutine(startListen());
                         }
                     }
@@ -112,6 +124,8 @@ namespace Biscuit.InGame
 
         public IEnumerator startListen()
         {
+            _RoleModel?.SetActive(true);
+
             _waveCount++;
             _phase = Phase.Listen;
             if (null != _laneController)
@@ -130,6 +144,8 @@ namespace Biscuit.InGame
 
         public IEnumerator startPlay()
         {
+            _RoleModel?.SetActive(false);
+
             _phase = Phase.Play;
             if (null != _laneController)
             {
@@ -170,6 +186,13 @@ namespace Biscuit.InGame
 
             // ƒŠƒUƒ‹ƒg‚Ö
             SceneManager.LoadScene("ResultScene");
+        }
+
+        private void levelUp()
+        {
+            if (null == _laneController) return;
+            _laneController.SetNotesCount(_laneController.NotesCount + _addCount);
+            _laneController.SetSpeed(_laneController.Speed + _addSpeed);
         }
 
     }

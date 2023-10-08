@@ -6,11 +6,15 @@ namespace Biscuit.InGame
 {
     public class LaneController : MonoBehaviour
     {
+        private const float DefaultSpeed = 1.0f;
+        private const int DefaultNotesCount = 4;
 
         private float _time = 0.0f;
 
         [SerializeField]
-        private float _speed = 1.0f;
+        private float _speed = DefaultSpeed;
+        public float Speed => _speed;
+
 
         [SerializeField]
         private float _maxTime = 16.5f;
@@ -35,7 +39,8 @@ namespace Biscuit.InGame
 
 
         [SerializeField]
-        private int _notesCount = 4;
+        private int _notesCount = DefaultNotesCount;
+        public int NotesCount => _notesCount;
 
         private List<GameObject> _notesList = new List<GameObject>();
 
@@ -45,7 +50,6 @@ namespace Biscuit.InGame
         // Start is called before the first frame update
         void Start()
         {
-
         }
 
         // Update is called once per frame
@@ -162,6 +166,17 @@ namespace Biscuit.InGame
             _notesPosList.RemoveAt(index);
 
             return pos;
+        }
+
+        public void SetSpeed(float speed)
+        {
+            _speed = speed;
+        }
+
+        public void SetNotesCount(int count)
+        {
+            _notesCount = count;
+
         }
 
     }
